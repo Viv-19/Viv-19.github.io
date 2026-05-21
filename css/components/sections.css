@@ -1,0 +1,42 @@
+/* =========================================
+   Agent-revealed sections (shared patterns)
+   ========================================= */
+.agent-section {
+    padding: var(--section-padding);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.agent-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section-header {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.section-typewriter {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    color: var(--color-accent);
+    font-weight: 700;
+    margin: 0;
+    padding-right: 5px;
+    border-right: 3px solid transparent;
+    white-space: nowrap;
+    min-height: clamp(2.4rem, 4.2vw, 3.6rem); /* prevent layout shift */
+}
+
+/* Blinking cursor class added by JS, or just animate border */
+.section-typewriter.typing {
+    animation: blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: var(--color-accent); }
+}

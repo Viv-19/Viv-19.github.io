@@ -1,0 +1,286 @@
+/* =========================================
+   Experience — image + details cards
+   ========================================= */
+.experience-section {
+    padding: var(--section-padding);
+}
+
+.experience-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.experience-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.experience-card {
+    display: grid;
+    grid-template-columns: minmax(180px, 240px) 1fr;
+    background: linear-gradient(155deg, #1c2028 0%, #14171e 100%);
+    border: 1px solid #323844;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+        opacity 0.7s ease var(--card-delay, 0.5s),
+        transform 0.7s ease var(--card-delay, 0.5s),
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.agent-section.visible .experience-card {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.experience-card:hover {
+    border-color: #3d4554;
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
+}
+
+/* Left — image / placeholder */
+.experience-card-media {
+    position: relative;
+    min-height: 260px;
+    background: #12151c;
+    border-right: 1px solid #2a2f38;
+}
+
+.experience-card-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 24px;
+    text-align: center;
+    background:
+        linear-gradient(145deg, rgba(72, 202, 228, 0.06) 0%, transparent 50%),
+        repeating-linear-gradient(
+            -45deg,
+            transparent,
+            transparent 8px,
+            rgba(255, 255, 255, 0.02) 8px,
+            rgba(255, 255, 255, 0.02) 16px
+        );
+}
+
+.experience-card-placeholder-label {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #6b7585;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.experience-card-placeholder-hint {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: #4d5666;
+    word-break: break-all;
+    max-width: 90%;
+}
+
+.experience-card-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.experience-card-media.has-image .experience-card-image {
+    opacity: 1;
+}
+
+.experience-card-media.has-image .experience-card-placeholder {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Right — role & work */
+.experience-card-body {
+    padding: clamp(24px, 3vw, 36px) clamp(26px, 3.2vw, 40px);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    border-left: 3px solid var(--color-accent);
+}
+
+.experience-card-head {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px 24px;
+}
+
+.experience-card-role {
+    font-family: var(--font-heading);
+    font-size: clamp(1.6rem, 2.5vw, 2rem);
+    font-weight: 600;
+    color: #fff;
+    margin: 0 0 6px;
+    letter-spacing: -0.02em;
+}
+
+.experience-card-company {
+    font-size: clamp(1.2rem, 1.8vw, 1.4rem);
+    color: var(--color-accent);
+    margin: 0 0 4px;
+    font-weight: 500;
+}
+
+.experience-card-subtitle {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+    margin: 0;
+    letter-spacing: 0.04em;
+}
+
+.experience-card-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.experience-card-period {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: #e0e1dd;
+    background: rgba(72, 202, 228, 0.1);
+    border: 1px solid rgba(72, 202, 228, 0.25);
+    padding: 6px 12px;
+    border-radius: 6px;
+    white-space: nowrap;
+}
+
+.experience-card-location {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--color-text-muted);
+}
+
+.experience-card-lead {
+    color: var(--color-text-main);
+    font-size: clamp(0.92rem, 1.1vw, 1rem);
+    line-height: 1.65;
+    margin: 0;
+}
+
+.experience-card-list {
+    margin: 0;
+    padding-left: 1.2rem;
+    color: var(--color-text-muted);
+    font-size: clamp(0.88rem, 1vw, 0.95rem);
+    line-height: 1.65;
+}
+
+.experience-card-list li {
+    margin-bottom: 10px;
+}
+
+.experience-card-list li:last-child {
+    margin-bottom: 0;
+}
+
+.experience-card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 4px;
+}
+
+.experience-card-tags span {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: #9aa3b2;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid #2e343f;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+/* Logo styling */
+.experience-card-title-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.experience-logos-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.experience-company-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    object-fit: contain;
+    background: #fff;
+    padding: 6px;
+    border: 1px solid #323844;
+}
+
+/* Accordion Toggle */
+.experience-card-details-container {
+    margin-top: 25px;
+    border-top: 1px solid #323844;
+    padding-top: 15px;
+}
+
+.experience-details-toggle {
+    background: none;
+    border: none;
+    color: var(--color-accent);
+    cursor: pointer;
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0;
+}
+
+.experience-details-toggle:hover {
+    color: #fff;
+}
+
+.arrow-icon {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+.experience-details-toggle[aria-expanded="true"] .arrow-icon {
+    transform: rotate(180deg);
+}
+
+.experience-card-details-content {
+    margin-top: 15px;
+    animation: fadeIn 0.3s ease;
+}
+
+.experience-card-details-content[hidden] {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

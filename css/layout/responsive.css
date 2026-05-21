@@ -1,0 +1,158 @@
+/* =========================================
+   Responsive breakpoints
+   ========================================= */
+@media (max-width: 768px) {
+    .name { font-size: 3rem; }
+    .title { font-size: 1.2rem; }
+
+    .nav-right {
+        gap: 12px;
+    }
+
+    .nav-links {
+        gap: 14px;
+    }
+
+    .nav-links li a {
+        font-size: 0.75rem;
+    }
+
+    .nav-agent-btn {
+        padding: 8px 12px;
+        font-size: 0.72rem;
+    }
+
+    .hero-bottom .mission {
+        font-size: clamp(1.35rem, 5vw, 1.75rem);
+    }
+
+    .hero-connect {
+        top: 70px;
+        left: 16px;
+    }
+
+    .hero-social {
+        gap: 8px;
+        max-width: calc(100vw - 32px);
+    }
+
+    .hero-social a {
+        width: 48px;
+        height: 48px;
+    }
+
+    .hero-social-icon {
+        width: 22px;
+        height: 22px;
+    }
+
+    .skills-orbit {
+        min-height: 88vh;
+    }
+
+    .skills-center-image {
+        width: min(280px, 72vw);
+        max-height: min(320px, 50vh);
+    }
+
+    .skills-orbit-core::before {
+        width: min(320px, 80vw);
+        height: min(320px, 80vw);
+    }
+
+    .skill-bubble {
+        font-size: 0.65rem;
+        padding: 6px 10px;
+        white-space: normal;
+        text-align: center;
+        max-width: 96px;
+    }
+
+    .skills-cluster-label {
+        font-size: 0.62rem;
+        padding: 6px 10px;
+        max-width: 130px;
+        white-space: normal;
+        text-align: center;
+        line-height: 1.25;
+        letter-spacing: 0.06em;
+    }
+
+    .projects-stage {
+        min-height: auto;
+    }
+
+    .projects-hub {
+        height: auto;
+        min-height: min(70.4vh, 640px);
+    }
+
+    .projects-hub.is-expanded {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        min-height: auto;
+        padding-bottom: 12px;
+    }
+
+    .projects-hub.is-expanded .projects-spokes {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        order: 2;
+        position: static;
+        pointer-events: auto;
+    }
+
+    .projects-hub.is-expanded .projects-core {
+        order: 1;
+        align-self: center;
+        margin: 8px 0 4px;
+    }
+
+    .projects-hub.is-expanded .project-spoke {
+        width: 100%;
+    }
+
+    .projects-core-image {
+        width: min(72vw, 340px);
+        max-height: min(40vh, 340px);
+    }
+
+    .projects-hub.is-expanded .projects-core-image {
+        width: min(36vw, 130px);
+        max-height: min(22vh, 150px);
+    }
+
+    .project-spoke-inner {
+        min-height: 0;
+        padding: 20px 22px;
+    }
+
+    .project-spoke-title {
+        font-size: 1.15rem;
+    }
+
+    .section-header {
+        font-size: 0.9rem;
+    }
+
+    .experience-card {
+        grid-template-columns: 1fr;
+    }
+
+    .experience-card-media {
+        min-height: 200px;
+        border-right: none;
+        border-bottom: 1px solid #2a2f38;
+    }
+
+    .experience-card-body {
+        border-left: none;
+        border-top: 3px solid var(--color-accent);
+    }
+
+    .experience-card-meta {
+        align-items: flex-start;
+    }
+}

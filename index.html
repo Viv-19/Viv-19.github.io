@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Vivesh Kumar Singh — AI Engineer and Backend Developer at IIIT Lucknow.">
+    <title>Vivesh Kumar Singh - AI Engineer</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Single stylesheet entry — partials live under css/ -->
+    <link rel="stylesheet" href="css/main.css?v=3">
+
+    <!-- Markdown Parser -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <!-- Fixed navigation (injected from components/navbar.html) -->
+    <div id="mount-nav"></div>
+
+
+
+    <!-- Page sections: hero, skills, projects, experience, contact -->
+    <main id="mount-sections" aria-label="Portfolio content"></main>
+
+    <!-- Chatbot widget -->
+    <div id="mount-chatbot"></div>
+
+    <!-- ES module entry — loads partials, then initializes interactions -->
+    <script type="module" src="js/main.js?v=3"></script>
+</body>
+</html>

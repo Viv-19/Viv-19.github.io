@@ -1,0 +1,138 @@
+/* =========================================
+   Navigation bar
+   ========================================= */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2000;
+    padding: 10px 0;
+    background: rgba(10, 13, 20, 0.65);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(72, 202, 228, 0.2);
+    transition: all 0.3s ease;
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.nav-logo {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+    flex-shrink: 0;
+}
+
+.nav-logo:hover {
+    color: #fff;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+}
+
+.nav-links li a {
+    color: var(--color-accent);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #fff;
+}
+
+/* Portfolio agent CTA (moved from hero) */
+.nav-agent-btn {
+    position: relative;
+    flex-shrink: 0;
+    background: var(--color-accent);
+    border: none;
+    color: var(--color-bg-base);
+    padding: 10px 24px;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 700;
+    border-radius: 30px;
+    cursor: pointer;
+    pointer-events: auto;
+    z-index: 99999;
+    overflow: hidden;
+    white-space: nowrap;
+    box-shadow: 0 0 15px rgba(72, 202, 228, 0.5);
+    transition: var(--transition-smooth);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.nav-agent-btn:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 0 25px rgba(72, 202, 228, 0.8);
+    background: #5EE0F5; /* slightly brighter on hover */
+    color: var(--color-bg-base);
+}
+
+.nav-agent-btn .btn-glow {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, var(--color-accent-glow) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+.nav-agent-btn:hover .btn-glow {
+    opacity: 1;
+}
+
+/* Visit Blog button - Highlighted Blue */
+.nav-blog-btn {
+    display: inline-block;
+    flex-shrink: 0;
+    background: #0077B6;
+    border: 2px solid #0077B6;
+    color: #ffffff;
+    padding: 10px 24px;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 700;
+    border-radius: 30px;
+    cursor: pointer;
+    text-decoration: none;
+    white-space: nowrap;
+    box-shadow: 0 0 15px rgba(0, 119, 182, 0.4);
+    transition: var(--transition-smooth);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.nav-blog-btn:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 0 25px rgba(0, 119, 182, 0.7);
+    background: #0096C7;
+    border-color: #0096C7;
+    color: #ffffff;
+}
